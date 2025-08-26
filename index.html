@@ -166,9 +166,29 @@ Dari hati yang selalu untukmu,
   });
 
   // konfeti sederhana
-  document.querySelector('#btnConfetti').addEventListener('click',()=>{
-    alert("🎊 Selamat Ulang Tahun Jeje! 🎊");
+  document.querySelector('#btnConfetti').addEventListener('click', () => {
+    const colors = ['#f44336','#e91e63','#9c27b0','#3f51b5','#2196f3','#4caf50','#ffeb3b','#ff9800'];
+    for (let i = 0; i < 100; i++) {
+      const confetti = document.createElement('div');
+      confetti.style.position = 'fixed';
+      confetti.style.width = '8px';
+      confetti.style.height = '8px';
+      confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+      confetti.style.top = '-10px';
+      confetti.style.left = Math.random() * window.innerWidth + 'px';
+      confetti.style.opacity = Math.random();
+      confetti.style.borderRadius = '50%';
+      confetti.style.pointerEvents = 'none';
+      document.body.appendChild(confetti);
+
+      const fallDuration = 2000 + Math.random() * 2000;
+      confetti.animate([
+        { transform: `translateY(0px) rotate(0deg)` },
+        { transform: `translateY(${window.innerHeight + 20}px) rotate(${Math.random()*720}deg)` }
+      ], { duration: fallDuration, easing: 'linear', fill: 'forwards' });
+
+      setTimeout(() => confetti.remove(), fallDuration);
+    }
   });
 </script>
 </body>
-</html>
