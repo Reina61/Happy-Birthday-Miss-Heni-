@@ -87,30 +87,32 @@
   </div>
 
   <!-- ======= Konfigurasi yang bisa kamu UBAH ======= -->
-  <script>
-    const CONFIG = {
-      recipientName: 'Jeje', // GANTI: Nama pacarmu
-      senderName: 'Rizky',     // GANTI: Namamu
-      eventDate: '2025-28-14T00:00:00+07:00', // GANTI: Tanggal ultah (format ISO, WIB)
-      heroLine: 'Semoga semua doa baikmu terkabul. Terima kasih sudah lahir dan hadir. 💫', // GANTI: kalimat pembuka
-      loveLetter: `
-      Dear {{name}},
-      
-      Di antara jutaan bintang, kamu yang paling bersinar untukku. Tahun ini mungkin sederhana, tapi cintaku tidak pernah sederhana; ia tumbuh, memeluk, dan melindungi. Selamat ulang tahun ya, semoga bahagiamu selalu menular ke hidupku juga. 
-      
-      Peluk jauh🤗,
-      {{from}}
-      `, // GANTI: isi surat. Gunakan {{name}} dan {{from}} sebagai placeholder.
-      // GANTI: Link lagu favorit kalian (opsional). Bisa file MP3 kamu di hosting apa pun, atau kosongkan '' jika tak mau musik.
-      songURL: 'https://cdn.pixabay.com/download/audio/2023/09/20/audio_5b7a1bcc7f.mp3?filename=cute-love-160576.mp3',
-      // GANTI: Kumpulan foto (link). Bisa dari Google Drive (set public), Imgur, atau link langsung.
-      photos: [
-        {src:'https://drive.google.com/file/d/1EHTe-w_WUlH_hWeGF77yGsuq6_jlkCKw/view?usp=drivesdk', cap:'Tawa kamu ya tergantikan'},
-        {src:'https://drive.google.com/file/d/1EWjqzDVKE9bq-dmF043TMuMY0ueTXmVj/view?usp=drivesdk', cap:'Moment Pertama kali Kita Nonton Bioskop'},
-        {src:'https://drive.google.com/file/d/1EXgxuqLtghj3l0pjCm3ze8bhrkVenDj1/view?usp=drivesdk', cap:'I Love You Cantik'},
-      ]
-    };
-  </script>
+<script>
+  const CONFIG = {
+    recipientName: 'Jeje', // Nama pacarmu
+    senderName: 'Rizky',   // Namamu
+    eventDate: '2025-08-14T00:00:00+07:00', // Format tanggal benar (YYYY-MM-DD)
+
+    heroLine: 'Semoga semua doa baikmu terkabul. Terima kasih sudah lahir dan hadir. 💫',
+
+    loveLetter: `
+    Dear {{name}},
+    
+    Di antara jutaan bintang, kamu yang paling bersinar untukku. Tahun ini mungkin sederhana, tapi cintaku tidak pernah sederhana; ia tumbuh, memeluk, dan melindungi. Selamat ulang tahun ya, semoga bahagiamu selalu menular ke hidupku juga. 
+    
+    Peluk jauh🤗,
+    {{from}}
+    `,
+
+    songURL: 'https://cdn.pixabay.com/download/audio/2023/09/20/audio_5b7a1bcc7f.mp3?filename=cute-love-160576.mp3',
+
+    photos: [
+      {src:'https://drive.google.com/uc?export=view&id=1EHTe-w_WUlH_hWeGF77yGsuq6_jlkCKw', cap:'Tawa kamu ya tergantikan'},
+      {src:'https://drive.google.com/uc?export=view&id=1EWjqzDVKE9bq-dmF043TMuMY0ueTXmVj', cap:'Moment Pertama kali Kita Nonton Bioskop'},
+      {src:'https://drive.google.com/uc?export=view&id=1EXgxuqLtghj3l0pjCm3ze8bhrkVenDj1', cap:'I Love You Cantik'},
+    ]
+  };
+</script>
 
   <!-- ======= Script Halaman ======= -->
   <script>
