@@ -7,12 +7,12 @@
   <meta name="description" content="Surprise ulang tahun sederhana—dibuat dengan cinta 💖" />
   <style>
     :root{
-      --bg:#0f172a;          /* slate-900 */
-      --card:#111827ee;      /* gray-900 */
-      --text:#e5e7eb;        /* gray-200 */
-      --accent:#f472b6;      /* pink-400 */
-      --accent-2:#60a5fa;    /* blue-400 */
-      --muted:#94a3b8;       /* slate-400 */
+      --bg:#0f172a;
+      --card:#111827ee;
+      --text:#e5e7eb;
+      --accent:#f472b6;
+      --accent-2:#60a5fa;
+      --muted:#94a3b8;
     }
     *{box-sizing:border-box}
     html,body{height:100%;margin:0;font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans"; background: radial-gradient(1200px 800px at 20% 10%, #1f2937, transparent),
@@ -36,13 +36,10 @@
     .footer{opacity:.7;font-size:.9rem;margin:24px 0}
     .audio-ind{width:10px;height:10px;border-radius:50%;background:#ef4444;box-shadow:0 0 12px #ef4444}
     .hide{display:none}
-    .count{font-variant-numeric: tabular-nums; font-size:clamp(18px, 2.2vw, 26px)}
     .heart{color:var(--accent)}
     .reveal{opacity:0;transform:translateY(10px);transition:.5s ease}
     .reveal.show{opacity:1;transform:none}
     canvas#confetti{position:fixed;inset:0;pointer-events:none}
-    .divider{height:1px;background:linear-gradient(90deg, transparent, rgba(255,255,255,.18), transparent);margin:20px 0}
-    .note{font-size:.95rem;color:var(--muted)}
   </style>
 </head>
 <body>
@@ -50,18 +47,14 @@
   <div class="container">
     <header class="card center">
       <span class="pill">🎂 Surprise Ulang Tahun</span>
-      <h1 class="title" id="heroTitle">Selamat Ulang Tahun, <span class="heart" id="targetName">Jeje</span>! ✨</h1>
-      <p class="subtitle" id="heroLine">Semoga semua doa baikmu terkabul. Terima kasih sudah lahir dan hadir. 💫</p>
+      <h1 class="title">Selamat Ulang Tahun, <span class="heart">Jeje</span>! ✨</h1>
+      <p class="subtitle">Semoga semua doa baikmu terkabul. Terima kasih sudah lahir dan hadir. 💫</p>
       <div class="row center" style="justify-content:center;gap:12px;margin:14px 0 6px">
         <button class="btn btn-primary" id="btnPlay">▶️ Putar Musik
           <span class="audio-ind hide" id="audioDot"></span>
         </button>
         <button class="btn" id="btnConfetti">🎊 Semburkan Konfeti</button>
-        <button class="btn" id="btnReveal">🎁 Buka Kejutan</button>
       </div>
-
-      <div id="countdown" class="count" aria-live="polite" style="margin-top:10px"></div>
-      <p class="note">Tip: kirim link ini pas 00:00 WIB untuk efek maksimal 😉</p>
     </header>
 
     <main class="row" style="margin-top:18px">
@@ -77,7 +70,7 @@
     </main>
 
     <footer class="center footer">
-      Dibuat dengan <span class="heart">❤</span> oleh <span id="fromName">Rizky</span>.
+      Dibuat dengan <span class="heart">❤</span> oleh Rizky.
     </footer>
   </div>
 
@@ -85,62 +78,41 @@
     const CONFIG = {
       recipientName: 'Jeje',
       senderName: 'Rizky',
-      eventDate: '2025-09-14T00:00:00+07:00',
-      heroLine: 'Semoga semua doa baikmu terkabul. Terima kasih sudah lahir dan hadir. 💫',
       loveLetter: `
       Dear {{name}},
       
-      Di antara jutaan bintang, kamu yang paling bersinar untukku. Tahun ini mungkin sederhana, tapi cintaku tidak pernah sederhana; ia tumbuh, memeluk, dan melindungi. Selamat ulang tahun ya, semoga bahagiamu selalu menular ke hidupku juga. 
+      Di antara jutaan bintang, kamu yang paling bersinar untukku. 
+      Selamat ulang tahun ya, semoga bahagiamu selalu menular ke hidupku juga. 
       
       Peluk jauh,
       {{from}}
       `,
-      songURL: 'https://drive.google.com/file/d/1EeXQ1iowkzCDyiNyyCyj0iLn8hWAyLhu/view?usp=drivesdk',
+      songURL: 'cinta.mp3', // taruh file musik di repo juga
       photos: [
-        {src:'https://drive.google.com/file/d/1EHTe-w_WUlH_hWeGF77yGsuq6_jlkCKw/view?usp=drivesdk', cap:'Tawa indah kamu'},
-        {src:'https://drive.google.com/file/d/1EWjqzDVKE9bq-dmF043TMuMY0ueTXmVj/view?usp=drivesdk', cap:'Moment pertama kali kita nonton bioskop'},
-        {src:'https://drive.google.com/file/d/1EXgxuqLtghj3l0pjCm3ze8bhrkVenDj1/view?usp=drivesdk', cap:'I love you cantik'}
+        {src:'images/jeje.jpg', cap:'Tawa indah kamu'},
+        {src:'images/bioskop.jpg', cap:'Moment pertama kali kita nonton bioskop'},
+        {src:'images/iloveyou.jpg', cap:'I love you cantik'}
       ]
     };
 
-    const $ = (q)=>document.querySelector(q);
-    const fmt = (n)=> String(n).padStart(2,'0');
-
-    function setText(id, text){ const el = typeof id==='string'? $(id): id; if(el) el.textContent = text; }
-
-    setText('#targetName', CONFIG.recipientName);
-    setText('#fromName', CONFIG.senderName);
-    setText('#heroLine', CONFIG.heroLine);
-
-    $('#loveLetter').innerText = CONFIG.loveLetter
+    // isi surat
+    document.querySelector('#loveLetter').innerText = CONFIG.loveLetter
       .replace(/\{\{name\}\}/g, CONFIG.recipientName)
       .replace(/\{\{from\}\}/g, CONFIG.senderName);
 
-    const gal = $('#gallery');
+    // isi galeri
+    const gal = document.querySelector('#gallery');
     CONFIG.photos.forEach((p,i)=>{
       const wrap = document.createElement('figure');
-      wrap.className='imgwrap reveal';
+      wrap.className='imgwrap reveal show';
       wrap.innerHTML = `<img src="${p.src}" alt="Foto ${i+1}"><figcaption class="badge">${p.cap||''}</figcaption>`;
       gal.appendChild(wrap);
     });
 
-    function updateCountdown(){
-      const tgt = new Date(CONFIG.eventDate);
-      const now = new Date();
-      const diff = tgt - now;
-      if(diff <= 0){ setText('#countdown', 'Hari ini harimu! 🎉'); return; }
-      const d = Math.floor(diff/86400000);
-      const h = Math.floor(diff%86400000/3600000);
-      const m = Math.floor(diff%3600000/60000);
-      const s = Math.floor(diff%60000/1000);
-      setText('#countdown', `Hitung mundur: ${fmt(d)} hari ${fmt(h)}:${fmt(m)}:${fmt(s)}`);
-    }
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-
+    // musik
     let audio;
-    const audioDot = $('#audioDot');
-    $('#btnPlay').addEventListener('click',()=>{
+    const audioDot = document.querySelector('#audioDot');
+    document.querySelector('#btnPlay').addEventListener('click',()=>{
       if(!audio){
         if(!CONFIG.songURL){alert('Belum ada lagu.');return}
         audio = new Audio(CONFIG.songURL);
@@ -150,7 +122,8 @@
       else{audio.pause(); audioDot.classList.add('hide');}
     });
 
-    const canvas = $('#confetti');
+    // konfeti
+    const canvas = document.querySelector('#confetti');
     const ctx = canvas.getContext('2d');
     let W,H,parts=[]; function resize(){W=canvas.width=innerWidth; H=canvas.height=innerHeight}
     addEventListener('resize', resize); resize();
@@ -173,13 +146,7 @@
       requestAnimationFrame(step);
     }
     step();
-    $('#btnConfetti').addEventListener('click', (e)=>{ burst(e.clientX||W/2, e.clientY||H/2, 220); });
-
-    function revealAll(){
-      document.querySelectorAll('.reveal').forEach((el,i)=> setTimeout(()=> el.classList.add('show'), 80*i));
-    }
-    $('#btnReveal').addEventListener('click', revealAll);
-    setTimeout(revealAll, 1200);
+    document.querySelector('#btnConfetti').addEventListener('click', (e)=>{ burst(e.clientX||W/2, e.clientY||H/2, 220); });
   </script>
 </body>
 </html>
