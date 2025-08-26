@@ -15,10 +15,9 @@
       --muted:#94a3b8;       /* slate-400 */
     }
     *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; background: radial-gradient(1200px 800px at 20% 10%, #1f2937, transparent),
+    html,body{height:100%;margin:0;font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans"; background: radial-gradient(1200px 800px at 20% 10%, #1f2937, transparent),
                radial-gradient(1000px 800px at 80% 20%, #0b1226, transparent),
                radial-gradient(1000px 1000px at 50% 100%, #0b1226, #0a0f1f); color:var(--text)}
-    a{color:var(--accent)}
     .container{max-width:980px;margin:0 auto;padding:24px}
     .card{background:linear-gradient(180deg, #0b1324, #0a0f1f);border:1px solid rgba(255,255,255,.06);box-shadow:0 20px 40px rgba(0,0,0,.45);border-radius:24px;padding:24px}
     .center{text-align:center}
@@ -51,9 +50,8 @@
   <div class="container">
     <header class="card center">
       <span class="pill">🎂 Surprise Ulang Tahun</span>
-      <h1 class="title" id="heroTitle">Selamat Ulang Tahun, <span class="heart" id="targetName">Sayang</span>! ✨</h1>
-      <p class="subtitle" id="heroLine">Setiap detik bersamamu adalah hadiah terindah. Semoga harimu sehangat pelukan kita. 💝</p>
-
+      <h1 class="title" id="heroTitle">Selamat Ulang Tahun, <span class="heart" id="targetName">Jeje</span>! ✨</h1>
+      <p class="subtitle" id="heroLine">Semoga semua doa baikmu terkabul. Terima kasih sudah lahir dan hadir. 💫</p>
       <div class="row center" style="justify-content:center;gap:12px;margin:14px 0 6px">
         <button class="btn btn-primary" id="btnPlay">▶️ Putar Musik
           <span class="audio-ind hide" id="audioDot"></span>
@@ -75,63 +73,49 @@
       <section class="card grow reveal" id="letterCard">
         <h2 class="title" style="font-size:1.6rem">💌 Surat Untukmu</h2>
         <p id="loveLetter" style="font-size:1.05rem;line-height:1.7"></p>
-        <div class="divider"></div>
-        <button class="btn" id="btnCopy">🔗 Salin Link Halaman</button>
-        <span class="note" id="copyState" style="margin-left:.5rem"></span>
       </section>
     </main>
 
     <footer class="center footer">
-      Dibuat dengan <span class="heart">❤</span> oleh <span id="fromName">Kamu</span>. — <a href="#" id="editHint">Cara edit?</a>
+      Dibuat dengan <span class="heart">❤</span> oleh <span id="fromName">Rizky</span>.
     </footer>
   </div>
 
-  <!-- ======= Konfigurasi yang bisa kamu UBAH ======= -->
-<script>
-  const CONFIG = {
-    recipientName: 'Jeje', // Nama pacarmu
-    senderName: 'Rizky',   // Namamu
-    eventDate: '2025-08-14T00:00:00+07:00', // Format tanggal benar (YYYY-MM-DD)
-
-    heroLine: 'Semoga semua doa baikmu terkabul. Terima kasih sudah lahir dan hadir. 💫',
-
-    loveLetter: `
-    Dear {{name}},
-    
-    Di antara jutaan bintang, kamu yang paling bersinar untukku. Tahun ini mungkin sederhana, tapi cintaku tidak pernah sederhana; ia tumbuh, memeluk, dan melindungi. Selamat ulang tahun ya, semoga bahagiamu selalu menular ke hidupku juga. 
-    
-    Peluk jauh🤗,
-    {{from}}
-    `,
-
-    songURL: 'https://cdn.pixabay.com/download/audio/2023/09/20/audio_5b7a1bcc7f.mp3?filename=cute-love-160576.mp3',
-
-    photos: [
-      {src:'https://drive.google.com/uc?export=view&id=1EHTe-w_WUlH_hWeGF77yGsuq6_jlkCKw', cap:'Tawa kamu ya tergantikan'},
-      {src:'https://drive.google.com/uc?export=view&id=1EWjqzDVKE9bq-dmF043TMuMY0ueTXmVj', cap:'Moment Pertama kali Kita Nonton Bioskop'},
-      {src:'https://drive.google.com/uc?export=view&id=1EXgxuqLtghj3l0pjCm3ze8bhrkVenDj1', cap:'I Love You Cantik'},
-    ]
-  };
-</script>
-
-  <!-- ======= Script Halaman ======= -->
   <script>
+    const CONFIG = {
+      recipientName: 'Jeje',
+      senderName: 'Rizky',
+      eventDate: '2025-09-14T00:00:00+07:00',
+      heroLine: 'Semoga semua doa baikmu terkabul. Terima kasih sudah lahir dan hadir. 💫',
+      loveLetter: `
+      Dear {{name}},
+      
+      Di antara jutaan bintang, kamu yang paling bersinar untukku. Tahun ini mungkin sederhana, tapi cintaku tidak pernah sederhana; ia tumbuh, memeluk, dan melindungi. Selamat ulang tahun ya, semoga bahagiamu selalu menular ke hidupku juga. 
+      
+      Peluk jauh,
+      {{from}}
+      `,
+      songURL: 'https://cdn.pixabay.com/download/audio/2023/09/20/audio_5b7a1bcc7f.mp3?filename=cute-love-160576.mp3',
+      photos: [
+        {src:'https://i.ibb.co/TH5CqNZ/foto1.jpg', cap:'Tawa indah kamu'},
+        {src:'https://i.ibb.co/9r3b6WQ/foto2.jpg', cap:'Moment pertama kali kita nonton bioskop'},
+        {src:'https://i.ibb.co/2tqNRfV/foto3.jpg', cap:'I love you cantik'}
+      ]
+    };
+
     const $ = (q)=>document.querySelector(q);
     const fmt = (n)=> String(n).padStart(2,'0');
 
     function setText(id, text){ const el = typeof id==='string'? $(id): id; if(el) el.textContent = text; }
 
-    // Inisialisasi teks
     setText('#targetName', CONFIG.recipientName);
     setText('#fromName', CONFIG.senderName);
     setText('#heroLine', CONFIG.heroLine);
 
-    // Surat cinta (render placeholder)
     $('#loveLetter').innerText = CONFIG.loveLetter
       .replace(/\{\{name\}\}/g, CONFIG.recipientName)
       .replace(/\{\{from\}\}/g, CONFIG.senderName);
 
-    // Galeri
     const gal = $('#gallery');
     CONFIG.photos.forEach((p,i)=>{
       const wrap = document.createElement('figure');
@@ -140,7 +124,6 @@
       gal.appendChild(wrap);
     });
 
-    // Countdown
     function updateCountdown(){
       const tgt = new Date(CONFIG.eventDate);
       const now = new Date();
@@ -155,12 +138,11 @@
     updateCountdown();
     setInterval(updateCountdown, 1000);
 
-    // Musik
     let audio;
     const audioDot = $('#audioDot');
     $('#btnPlay').addEventListener('click',()=>{
       if(!audio){
-        if(!CONFIG.songURL){alert('Belum ada lagu. Isi CONFIG.songURL ya!');return}
+        if(!CONFIG.songURL){alert('Belum ada lagu.');return}
         audio = new Audio(CONFIG.songURL);
         audio.loop = true;
       }
@@ -168,7 +150,6 @@
       else{audio.pause(); audioDot.classList.add('hide');}
     });
 
-    // Confetti sederhana
     const canvas = $('#confetti');
     const ctx = canvas.getContext('2d');
     let W,H,parts=[]; function resize(){W=canvas.width=innerWidth; H=canvas.height=innerHeight}
@@ -194,15 +175,11 @@
     step();
     $('#btnConfetti').addEventListener('click', (e)=>{ burst(e.clientX||W/2, e.clientY||H/2, 220); });
 
-    // Reveal animasi
     function revealAll(){
       document.querySelectorAll('.reveal').forEach((el,i)=> setTimeout(()=> el.classList.add('show'), 80*i));
     }
     $('#btnReveal').addEventListener('click', revealAll);
-    // Auto-reveal setelah beberapa detik
     setTimeout(revealAll, 1200);
-    })
   </script>
 </body>
 </html>
-
