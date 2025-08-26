@@ -89,26 +89,25 @@
   <!-- ======= Konfigurasi yang bisa kamu UBAH ======= -->
   <script>
     const CONFIG = {
-      recipientName: 'Dinda', // GANTI: Nama pacarmu
-      senderName: 'Raka',     // GANTI: Namamu
-      eventDate: '2025-09-14T00:00:00+07:00', // GANTI: Tanggal ultah (format ISO, WIB)
+      recipientName: 'Jeje', // GANTI: Nama pacarmu
+      senderName: 'Rizky',     // GANTI: Namamu
+      eventDate: '2025-08-28T00:00:00+07:00', // GANTI: Tanggal ultah (format ISO, WIB)
       heroLine: 'Semoga semua doa baikmu terkabul. Terima kasih sudah lahir dan hadir. 💫', // GANTI: kalimat pembuka
       loveLetter: `
       Dear {{name}},
       
       Di antara jutaan bintang, kamu yang paling bersinar untukku. Tahun ini mungkin sederhana, tapi cintaku tidak pernah sederhana; ia tumbuh, memeluk, dan melindungi. Selamat ulang tahun ya, semoga bahagiamu selalu menular ke hidupku juga. 
       
-      Peluk jauh,
+      Peluk jauh🤗,
       {{from}}
       `, // GANTI: isi surat. Gunakan {{name}} dan {{from}} sebagai placeholder.
       // GANTI: Link lagu favorit kalian (opsional). Bisa file MP3 kamu di hosting apa pun, atau kosongkan '' jika tak mau musik.
       songURL: 'https://cdn.pixabay.com/download/audio/2023/09/20/audio_5b7a1bcc7f.mp3?filename=cute-love-160576.mp3',
       // GANTI: Kumpulan foto (link). Bisa dari Google Drive (set public), Imgur, atau link langsung.
       photos: [
-        {src:'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1400&auto=format&fit=crop', cap:'Momen pertama nonton bareng'},
-        {src:'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=1400&auto=format&fit=crop', cap:'Kopi favoritmu'},
-        {src:'https://images.unsplash.com/photo-1520975922313-98085e99c656?q=80&w=1400&auto=format&fit=crop', cap:'Tawa kamu tak tergantikan'},
-        {src:'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1400&auto=format&fit=crop', cap:'Senja yang kita kejar'},
+        {src:'https://drive.google.com/file/d/1EHTe-w_WUlH_hWeGF77yGsuq6_jlkCKw/view?usp=drivesdk', cap:'Tawa kamu ya tergantikan'},
+        {src:'https://drive.google.com/file/d/1EWjqzDVKE9bq-dmF043TMuMY0ueTXmVj/view?usp=drivesdk', cap:'Moment Pertama kali Kita Nonton Bioskop'},
+        {src:'https://drive.google.com/file/d/1EXgxuqLtghj3l0pjCm3ze8bhrkVenDj1/view?usp=drivesdk', cap:'I Love You Cantik'},
       ]
     };
   </script>
@@ -200,17 +199,6 @@
     $('#btnReveal').addEventListener('click', revealAll);
     // Auto-reveal setelah beberapa detik
     setTimeout(revealAll, 1200);
-
-    // Salin link
-    $('#btnCopy').addEventListener('click', async()=>{
-      try{ await navigator.clipboard.writeText(location.href); $('#copyState').textContent='Tersalin!'; setTimeout(()=>$('#copyState').textContent='',2000)}
-      catch{ $('#copyState').textContent='Gagal menyalin'; }
-    });
-
-    // Bantuan edit
-    $('#editHint').addEventListener('click',(e)=>{
-      e.preventDefault();
-      alert(`Cara edit cepat:\n1) Cari bagian: const CONFIG = { ... }\n2) Ganti recipientName, senderName, eventDate, heroLine, loveLetter.\n3) Ganti link foto di photos[].\n4) (Opsional) isi songURL untuk musik.\n5) Commit sebagai index.html di GitHub Pages.`)
     })
   </script>
 </body>
