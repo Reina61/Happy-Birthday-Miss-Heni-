@@ -6,37 +6,27 @@
   <title>Happy Birthday! 🎂</title>
   <meta name="description" content="Surprise ulang tahun sederhana—dibuat dengan cinta 💖" />
   <style>
-    :root{
-      --bg:#0f172a;
-      --card:#111827ee;
-      --text:#e5e7eb;
-      --accent:#f472b6;
-      --accent-2:#60a5fa;
-      --muted:#94a3b8;
-    }
+    :root{--bg:#0f172a;--card:#111827ee;--text:#e5e7eb;--accent:#f472b6;--accent-2:#60a5fa;--muted:#94a3b8}
     *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans"; background: radial-gradient(1200px 800px at 20% 10%, #1f2937, transparent),
-               radial-gradient(1000px 800px at 80% 20%, #0b1226, transparent),
-               radial-gradient(1000px 1000px at 50% 100%, #0b1226, #0a0f1f); color:var(--text)}
+    html,body{height:100%;margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans";
+      background:radial-gradient(1200px 800px at 20% 10%,#1f2937,transparent),
+                 radial-gradient(1000px 800px at 80% 20%,#0b1226,transparent),
+                 radial-gradient(1000px 1000px at 50% 100%,#0b1226,#0a0f1f);color:var(--text)}
     .container{max-width:980px;margin:0 auto;padding:24px}
-    .card{background:linear-gradient(180deg, #0b1324, #0a0f1f);border:1px solid rgba(255,255,255,.06);box-shadow:0 20px 40px rgba(0,0,0,.45);border-radius:24px;padding:24px}
-    .center{text-align:center}
-    .row{display:flex;flex-wrap:wrap;gap:16px}
-    .grow{flex:1 1 300px}
+    .card{background:linear-gradient(180deg,#0b1324,#0a0f1f);border:1px solid rgba(255,255,255,.06);box-shadow:0 20px 40px rgba(0,0,0,.45);border-radius:24px;padding:24px}
+    .center{text-align:center}.row{display:flex;flex-wrap:wrap;gap:16px}.grow{flex:1 1 300px}
     .pill{display:inline-flex;gap:.5rem;align-items:center;padding:.4rem .8rem;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);color:var(--muted);font-size:.9rem}
-    .title{font-size:clamp(28px, 3.2vw, 44px);line-height:1.1;margin:.2em 0}
+    .title{font-size:clamp(28px,3.2vw,44px);line-height:1.1;margin:.2em 0}
     .subtitle{color:var(--muted);font-size:1.05rem;margin:.2em 0 1em}
-    .btn{cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1rem;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));color:var(--text);transition:.2s transform, .2s opacity}
-    .btn:hover{transform:translateY(-1px)}
-    .btn-primary{background:linear-gradient(180deg, var(--accent), var(--accent-2));color:#0b0f1a;border:none}
+    .btn{cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1rem;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));color:var(--text);transition:.2s transform,.2s opacity}
+    .btn:hover{transform:translateY(-1px)}.btn-primary{background:linear-gradient(180deg,var(--accent),var(--accent-2));color:#0b0f1a;border:none}
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
     .imgwrap{position:relative;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.08)}
     .imgwrap img{display:block;width:100%;height:220px;object-fit:cover;filter:saturate(1.05) contrast(1.05)}
     .badge{position:absolute;inset:auto 8px 8px auto;background:rgba(0,0,0,.5);color:#fff;padding:.25rem .5rem;border-radius:10px;font-size:.8rem}
     .footer{opacity:.7;font-size:.9rem;margin:24px 0}
     .audio-ind{width:10px;height:10px;border-radius:50%;background:#ef4444;box-shadow:0 0 12px #ef4444}
-    .hide{display:none}
-    .heart{color:var(--accent)}
+    .hide{display:none}.heart{color:var(--accent)}
     .reveal{opacity:0;transform:translateY(10px);transition:.5s ease}
     .reveal.show{opacity:1;transform:none}
     canvas#confetti{position:fixed;inset:0;pointer-events:none}
@@ -50,9 +40,7 @@
       <h1 class="title">Selamat Ulang Tahun, <span class="heart">Jeje</span>! ✨</h1>
       <p class="subtitle">Semoga semua doa baikmu terkabul. Terima kasih sudah lahir dan hadir. 💫</p>
       <div class="row center" style="justify-content:center;gap:12px;margin:14px 0 6px">
-        <button class="btn btn-primary" id="btnPlay">▶️ Putar Musik
-          <span class="audio-ind hide" id="audioDot"></span>
-        </button>
+        <button class="btn btn-primary" id="btnPlay">▶️ Putar Musik <span class="audio-ind hide" id="audioDot"></span></button>
         <button class="btn" id="btnConfetti">🎊 Semburkan Konfeti</button>
       </div>
     </header>
@@ -80,18 +68,18 @@
       senderName: 'Rizky',
       loveLetter: `
       Dear {{name}},
-      
-      Di antara jutaan bintang, kamu yang paling bersinar untukku. 
-      Selamat ulang tahun ya, semoga bahagiamu selalu menular ke hidupku juga. 
-      
+
+      Di antara jutaan bintang, kamu yang paling bersinar untukku.
+      Selamat ulang tahun ya, semoga bahagiamu selalu menular ke hidupku juga.
+
       Peluk jauh,
       {{from}}
       `,
-      songURL: 'cinta.mp3', // taruh file musik di repo juga
+      songURL: 'cinta.mp3',
       photos: [
-        {src:'image/jeje.jpg', cap:'Tawa indah kamu'},
-        {src:'image/bioskop.jpg', cap:'Moment pertama kali kita nonton bioskop'},
-        {src:'image/iloveyou.jpg', cap:'I love you cantik'}
+        { src:'jeje.jpg', cap:'Tawa indah kamu' },
+        { src:'bioskop.jpg', cap:'Moment pertama kali kita nonton bioskop' },
+        { src:'iloveyou', cap:'I love you cantik' }
       ]
     };
 
@@ -104,9 +92,14 @@
     const gal = document.querySelector('#gallery');
     CONFIG.photos.forEach((p,i)=>{
       const wrap = document.createElement('figure');
-      wrap.className='imgwrap reveal show';
+      wrap.className='imgwrap';
       wrap.innerHTML = `<img src="${p.src}" alt="Foto ${i+1}"><figcaption class="badge">${p.cap||''}</figcaption>`;
       gal.appendChild(wrap);
+    });
+
+    // TAMPILKAN semua elemen yang punya class .reveal
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('show'));
     });
 
     // musik
@@ -125,28 +118,29 @@
     // konfeti
     const canvas = document.querySelector('#confetti');
     const ctx = canvas.getContext('2d');
-    let W,H,parts=[]; function resize(){W=canvas.width=innerWidth; H=canvas.height=innerHeight}
+    let W,H,parts=[];
+    function resize(){W=canvas.width=innerWidth; H=canvas.height=innerHeight}
     addEventListener('resize', resize); resize();
     function burst(x=W/2,y=H/2,count=180){
       for(let i=0;i<count;i++){
-        parts.push({x,y, r:Math.random()*6+2, vx:(Math.random()-0.5)*6, vy:Math.random()*-6-2, a:1, rot:Math.random()*Math.PI, vr:(Math.random()-0.5)*0.3, hue: 200+Math.random()*120});
+        parts.push({x,y,r:Math.random()*6+2,vx:(Math.random()-0.5)*6,vy:Math.random()*-6-2,a:1,rot:Math.random()*Math.PI,vr:(Math.random()-0.5)*0.3,hue:200+Math.random()*120});
       }
     }
     function step(){
       ctx.clearRect(0,0,W,H);
       parts.forEach(p=>{
-        p.vy += 0.12; p.x += p.vx; p.y += p.vy; p.rot += p.vr; p.a -= 0.006;
+        p.vy+=0.12; p.x+=p.vx; p.y+=p.vy; p.rot+=p.vr; p.a-=0.006;
         ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rot);
-        ctx.globalAlpha = Math.max(p.a,0);
-        ctx.fillStyle = `hsl(${p.hue},90%,60%)`;
+        ctx.globalAlpha=Math.max(p.a,0);
+        ctx.fillStyle=`hsl(${p.hue},90%,60%)`;
         ctx.fillRect(-p.r/2,-p.r/2,p.r,p.r);
         ctx.restore();
       });
-      parts = parts.filter(p=> p.a>0 && p.y<H+50);
+      parts=parts.filter(p=>p.a>0&&p.y<H+50);
       requestAnimationFrame(step);
     }
     step();
-    document.querySelector('#btnConfetti').addEventListener('click', (e)=>{ burst(e.clientX||W/2, e.clientY||H/2, 220); });
+    document.querySelector('#btnConfetti').addEventListener('click',(e)=>{ burst(e.clientX||W/2,e.clientY||H/2,220); });
   </script>
 </body>
 </html>
