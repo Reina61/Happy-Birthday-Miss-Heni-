@@ -3,62 +3,134 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Happy Birthday! 🎂</title>
-  <meta name="description" content="Surprise ulang tahun sederhana—dibuat dengan cinta 💖" />
+  <title>🎂 Happy Birthday Jeje</title>
+  <meta name="description" content="Ucapan ulang tahun spesial untuk Jeje dari Rizky 💖" />
   <style>
-    :root{--bg:#0f172a;--card:#111827ee;--text:#e5e7eb;--accent:#f472b6;--accent-2:#60a5fa;--muted:#94a3b8}
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans";
-      background:radial-gradient(1200px 800px at 20% 10%,#1f2937,transparent),
-                 radial-gradient(1000px 800px at 80% 20%,#0b1226,transparent),
-                 radial-gradient(1000px 1000px at 50% 100%,#0b1226,#0a0f1f);color:var(--text)}
-    .container{max-width:980px;margin:0 auto;padding:24px}
-    .card{background:linear-gradient(180deg,#0b1324,#0a0f1f);border:1px solid rgba(255,255,255,.06);box-shadow:0 20px 40px rgba(0,0,0,.45);border-radius:24px;padding:24px}
-    .center{text-align:center}.row{display:flex;flex-wrap:wrap;gap:16px}.grow{flex:1 1 300px}
-    .pill{display:inline-flex;gap:.5rem;align-items:center;padding:.4rem .8rem;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);color:var(--muted);font-size:.9rem}
-    .title{font-size:clamp(28px,3.2vw,44px);line-height:1.1;margin:.2em 0}
-    .subtitle{color:var(--muted);font-size:1.05rem;margin:.2em 0 1em}
-    .btn{cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1rem;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));color:var(--text);transition:.2s transform,.2s opacity}
-    .btn:hover{transform:translateY(-1px)}.btn-primary{background:linear-gradient(180deg,var(--accent),var(--accent-2));color:#0b0f1a;border:none}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
-    .imgwrap{position:relative;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.08)}
-    .imgwrap img{display:block;width:100%;height:220px;object-fit:cover;filter:saturate(1.05) contrast(1.05)}
-    .badge{position:absolute;inset:auto 8px 8px auto;background:rgba(0,0,0,.5);color:#fff;padding:.25rem .5rem;border-radius:10px;font-size:.8rem}
-    .footer{opacity:.7;font-size:.9rem;margin:24px 0}
-    .audio-ind{width:10px;height:10px;border-radius:50%;background:#ef4444;box-shadow:0 0 12px #ef4444}
-    .hide{display:none}.heart{color:var(--accent)}
-    .reveal{opacity:0;transform:translateY(10px);transition:.5s ease}
-    .reveal.show{opacity:1;transform:none}
+    :root {
+      --bg: #0f172a;
+      --card: #111827ee;
+      --text: #e5e7eb;
+      --accent: #f472b6;
+      --accent-2: #60a5fa;
+      --muted: #94a3b8;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: radial-gradient(1200px 800px at 20% 10%,#1f2937,transparent),
+                  radial-gradient(1000px 800px at 80% 20%,#0b1226,transparent),
+                  radial-gradient(1000px 1000px at 50% 100%,#0b1226,#0a0f1f);
+      color: var(--text);
+      min-height: 100vh;
+    }
+    .container {max-width: 980px; margin: auto; padding: 24px}
+    .card {
+      background: linear-gradient(180deg,#0b1324,#0a0f1f);
+      border: 1px solid rgba(255,255,255,.06);
+      border-radius: 20px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.45);
+      animation: fadeIn 1s ease both;
+    }
+    @keyframes fadeIn {from{opacity:0; transform:translateY(20px)} to{opacity:1; transform:none}}
+    h1,h2 {line-height:1.2}
+    h1 {font-size:clamp(28px,4vw,42px); color: var(--accent)}
+    h2 {font-size:1.6rem; margin-bottom:12px}
+    .pill {
+      display:inline-block;
+      padding: .4rem .9rem;
+      border-radius:999px;
+      background:rgba(255,255,255,.06);
+      font-size:.9rem;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+    .subtitle {color: var(--muted); font-size:1.05rem; margin-bottom: 16px}
+    .btn {
+      cursor:pointer;
+      padding:.7rem 1.2rem;
+      border-radius:14px;
+      border:none;
+      font-size:.95rem;
+      font-weight:500;
+      margin: 4px;
+      transition:.2s transform,.2s opacity;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary {
+      background: linear-gradient(135deg,var(--accent),var(--accent-2));
+      color:#fff;
+    }
+    .btn-outline {
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.2);
+      color: var(--text);
+    }
+    .grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:14px;
+    }
+    .imgwrap {
+      position:relative;
+      overflow:hidden;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.08);
+      transition:.3s transform;
+    }
+    .imgwrap img {width:100%; height:220px; object-fit:cover; display:block; transition:.4s transform}
+    .imgwrap:hover img{transform:scale(1.05)}
+    .badge {
+      position:absolute; bottom:8px; right:8px;
+      background:rgba(0,0,0,.6);
+      padding: .3rem .7rem;
+      font-size:.8rem; border-radius:12px;
+    }
+    .letter-box {
+      background:rgba(255,255,255,.05);
+      border-radius:12px;
+      padding:16px;
+      font-size:1rem;
+      line-height:1.7;
+      max-height:200px;
+      overflow-y:auto;
+      white-space:pre-line;
+    }
+    footer {
+      text-align:center;
+      opacity:.7;
+      font-size:.9rem;
+      margin:20px 0;
+    }
     canvas#confetti{position:fixed;inset:0;pointer-events:none}
   </style>
 </head>
 <body>
   <canvas id="confetti"></canvas>
   <div class="container">
-    <header class="card center">
-      <span class="pill">🎂 Surprise Ulang Tahun</span>
-      <h1 class="title">Selamat Ulang Tahun, <span class="heart">Jeje</span>! ✨</h1>
-      <p class="subtitle">Semoga semua doa baikmu terkabul. Terima kasih sudah lahir dan hadir. 💫</p>
-      <div class="row center" style="justify-content:center;gap:12px;margin:14px 0 6px">
-        <button class="btn btn-primary" id="btnPlay">▶️ Diputar Musiknya <span class="audio-ind hide" id="audioDot"></span></button>
-        <button class="btn" id="btnConfetti">🎊 Dipencet Sayang</button>
+    <header class="card" style="text-align:center">
+      <span class="pill">🎉 Surprise Ulang Tahun</span>
+      <h1>Selamat Ulang Tahun, Jeje! ✨</h1>
+      <p class="subtitle">Semoga semua doa baikmu terkabul & hari-harimu penuh senyum 💕</p>
+      <div>
+        <button class="btn btn-primary" id="btnPlay">▶️ Putar Musik</button>
+        <button class="btn btn-outline" id="btnConfetti">🎊 Tebar Confetti</button>
       </div>
     </header>
 
-    <main class="row" style="margin-top:18px">
-      <section class="card grow reveal" id="galleryCard">
-        <h2 class="title" style="font-size:1.6rem">📸 Galeri Kenangan</h2>
-        <div class="grid" id="gallery"></div>
-      </section>
+    <section class="card">
+      <h2>📸 Galeri Kenangan</h2>
+      <div class="grid" id="gallery"></div>
+    </section>
 
-      <section class="card grow reveal" id="letterCard">
-        <h2 class="title" style="font-size:1.6rem">💌 Surat Untukmu</h2>
-        <p id="loveLetter" style="font-size:1.05rem;line-height:1.7"></p>
-      </section>
-    </main>
+    <section class="card">
+      <h2>💌 Surat Untukmu</h2>
+      <div class="letter-box" id="loveLetter"></div>
+    </section>
 
-    <footer class="center footer">
-      Dibuat dengan <span class="heart">❤</span> oleh Rizky.
+    <footer>
+      Dibuat dengan ❤ oleh Rizky untuk Jeje
     </footer>
   </div>
 
@@ -67,19 +139,21 @@
       recipientName: 'Jeje',
       senderName: 'Rizky',
       loveLetter: `
-      Dear {{name}},
+Dear {{name}},
 
-      Di antara jutaan bintang, kamu yang paling bersinar untukku. Tahun ini mungkin sederhana, 
-      tapi cintaku tidak pernah sederhana. ia tumbuh, memeluk, dan melindungi. Selamat ulang tahun ya, 
-      semoga bahagiamu selalu menular ke hidupku juga.
-      Peluk jauh🤗❤️
-      {{from}}
+Aku bersyukur bisa mengenalmu dan berbagi banyak cerita. 
+Di hari spesial ini, aku cuma mau bilang: kamu itu hadiah terindah buat hidupku. 
+
+Selamat ulang tahun sayang! 🥳 Semoga kebahagiaanmu terus bertambah setiap harinya. 
+
+Dari hati yang selalu untukmu,  
+{{from}} 💖
       `,
       songURL: 'cinta.mp3',
       photos: [
-        { src:'jeje.jpg', cap:'Tawa indah kamu' },
-        { src:'bioskop.jpg', cap:'Moment pertama kali kita nonton bioskop' },
-        { src:'iloveyou', cap:'I love you cantik' }
+        { src:'jeje.jpg', cap:'Tawa indahmu 💕' },
+        { src:'bioskop.jpg', cap:'Kencan pertama di bioskop 🎬' },
+        { src:'loveyou.jpg', cap:'I Love You, Cantik 😘' }
       ]
     };
 
@@ -97,22 +171,14 @@
       gal.appendChild(wrap);
     });
 
-    // TAMPILKAN semua elemen yang punya class .reveal
-    window.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('.reveal').forEach(el => el.classList.add('show'));
-    });
-
     // musik
     let audio;
-    const audioDot = document.querySelector('#audioDot');
     document.querySelector('#btnPlay').addEventListener('click',()=>{
       if(!audio){
-        if(!CONFIG.songURL){alert('Belum ada lagu.');return}
         audio = new Audio(CONFIG.songURL);
         audio.loop = true;
       }
-      if(audio.paused){audio.play(); audioDot.classList.remove('hide');}
-      else{audio.pause(); audioDot.classList.add('hide');}
+      if(audio.paused){audio.play();} else {audio.pause();}
     });
 
     // konfeti
