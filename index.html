@@ -75,6 +75,25 @@
       90% {opacity:1}
       100% {bottom:110%; opacity:0}
     }
+
+    /* mini game */
+    #gameArea {
+      position:relative;
+      height:300px;
+      background:#1e293b;
+      border-radius:12px;
+      overflow:hidden;
+    }
+    .balloon {
+      position:absolute;
+      width:40px;
+      height:60px;
+      background:radial-gradient(circle at 30% 30%, #ff99cc, #e91e63);
+      border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;
+      cursor:pointer;
+      transition:bottom 4s linear;
+    }
+
     footer {text-align:center;opacity:.7;font-size:.9rem;margin:20px 0;}
   </style>
 </head>
@@ -91,14 +110,20 @@
 
     <section class="card">
       <h2>📸 Galeri Kenangan</h2>
-      <div class="slideshow" id="slideshow">
-        <!-- slides akan dimasukkan via JS -->
-      </div>
+      <div class="slideshow" id="slideshow"></div>
     </section>
 
     <section class="card">
       <h2>💌 Surat Untukmu</h2>
       <div class="letter-box" id="loveLetter"></div>
+    </section>
+
+    <!-- Mini Game Balon -->
+    <section class="card">
+      <h2>🎮 Mini Game: Pecahin Balon 🎈</h2>
+      <p>Klik balonnya sebelum terbang ke atas!</p>
+      <div id="gameArea"></div>
+      <p id="scoreText">Skor: 0</p>
     </section>
 
     <div class="marquee"><span id="marqueeText"></span></div>
@@ -190,5 +215,41 @@ Dari hati yang selalu untukmu,
       setTimeout(() => confetti.remove(), fallDuration);
     }
   });
+
+  // ================= MINI GAME BALON =================
+  let score = 0;
+  function spawnBalloon() {
+    const balloon = document.createElement("div");
+    balloon.className = "balloon";
+    balloon.style.left = Math.random() * 90 + "%";
+    balloon.style.bottom = "0px";
+
+    // klik balon
+    balloon.addEventListener("click", () => {
+      score++;
+      document.getElementById("scoreText").innerText = "Skor: " + score;
+      balloon.remove();
+
+      if (score === 10) {
+        alert("Yeay Jeje! 🎉 Kamu berhasil pecahin 10 balon 💖 Happy Birthday! 🥳");
+      }
+    });
+
+    document.getElementById("gameArea").appendChild(balloon);
+
+    // animasi terbang
+    setTimeout(() => {
+      balloon.style.bottom = "300px";
+    }, 100);
+
+    // hapus kalau sudah lewat
+    setTimeout(() => {
+      if (document.body.contains(balloon)) {
+        balloon.remove();
+      }
+    }, 4000);
+  }
+  setInterval(spawnBalloon, 1000);
 </script>
 </body>
+</html>
